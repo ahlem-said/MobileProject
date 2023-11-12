@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.GranularRoundedCorners;
-import com.example.myapplication.DetailActivity;
+import com.example.myapplication.activities.DetailActivity;
 import com.example.myapplication.Domains.BlogDomain;
 import com.example.myapplication.R;
 

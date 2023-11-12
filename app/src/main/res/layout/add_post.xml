@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".NewPostActivity">
+    tools:context=".activities.AddBlogActivity">
 
     <Button
         android:id="@+id/newPostBtn"
@@ -16,11 +16,10 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/intro_background"
-        android:fontFamily="@font/acme"
         android:gravity="center"
         android:text=" Add Post"
         android:textAllCaps="false"
-android:textColor="@color/white"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,25 +28,54 @@ android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/newPostDescription"
         app:layout_constraintVertical_bias="0.383" />
 
-    <TextView
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/chooseImageButton"
+        style="@android:style/Widget.Button"
+        android:layout_width="336dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="21dp"
+        android:background="@drawable/intro_background"
+        android:text="Choose Image"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/titleview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newPostImage"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
         android:id="@+id/titleview"
         android:layout_width="350dp"
         android:layout_height="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="30dp"
         android:autofillHints="name"
         android:background="@drawable/edit_text_border"
         android:ems="10"
         android:gravity="start"
         android:hapticFeedbackEnabled="false"
         android:hint="Title"
-        android:hyphenationFrequency="normal"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="341dp" />
+        android:hyphenationFrequency="normalFast"
+        android:rotationX="352"
+        app:layout_constraintBottom_toTopOf="@+id/newPostDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseImageButton"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/newPostDescription"
         android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="5dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         android:autofillHints="name"
@@ -75,10 +103,9 @@ android:textColor="@color/white"
     <ImageView
         android:id="@+id/newPostImage"
         android:layout_width="0dp"
-        android:layout_height="300dp"
+        android:layout_height="240dp"
         android:layout_marginBottom="300dp"
         android:background="@drawable/post_placeholder"
-        android:contentDescription="@string/contentDescLogo"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

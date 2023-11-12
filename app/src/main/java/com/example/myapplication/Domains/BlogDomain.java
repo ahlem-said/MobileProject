@@ -1,12 +1,22 @@
 package com.example.myapplication.Domains;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 
+@Entity
 public class BlogDomain implements Serializable {
-    private String title ;
+    @PrimaryKey(autoGenerate = true)
+    public  int id ;
+    @ColumnInfo
+    public String title ;
 
-    private String description;
-    private String pic;
+    @ColumnInfo
+    public String description;
+    @ColumnInfo
+    public String pic;
 
     public BlogDomain(String title, String description, String pic) {
         this.title = title;

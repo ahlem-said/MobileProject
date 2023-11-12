@@ -1,6 +1,7 @@
-package com.example.myapplication;
+package com.example.myapplication.activities;
 import com.bumptech.glide.Glide;
 import com.example.myapplication.Domains.BlogDomain;
+import com.example.myapplication.R;
 
 import android.os.Bundle;
 import android.widget.ImageView;

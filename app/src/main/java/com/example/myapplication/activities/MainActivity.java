@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.myapplication.Adapters.BlogAdapters;
 import com.example.myapplication.Domains.BlogDomain;
+import com.example.myapplication.R;
 
 import java.util.ArrayList;
 
@@ -17,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.blog_list_item);
-        initRecyclerView();
+        setContentView(R.layout.add_post);
+        //initRecyclerView();
     }
 
-    private void initRecyclerView() {
+    /*private void initRecyclerView() {
         ArrayList<BlogDomain> items = new ArrayList<>();
         items.add(new BlogDomain("Mar caible,avendia lago",
                 " It is well-known that setting up and managing finances a "
@@ -39,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
         adapterBlog=new BlogAdapters(items);
         recyclerViewBlogs.setAdapter(adapterBlog);
 
-
-
-
-
     }
+*/
+
+
+
 }
