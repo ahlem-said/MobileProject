@@ -6,6 +6,7 @@ android {
     namespace = "com.example.tripsmodule"
     compileSdk = 34
 
+
     defaultConfig {
         applicationId = "com.example.tripsmodule"
         minSdk = 24
@@ -29,6 +30,8 @@ android {
 }
 
 dependencies {
+    implementation ("androidx.room:room-runtime:2.4.1")
+    annotationProcessor ("androidx.room:room-compiler:2.4.1")
 
     implementation("androidx.appcompat:appcompat:1.6.1")
 

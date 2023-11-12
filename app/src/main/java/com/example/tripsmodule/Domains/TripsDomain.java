@@ -1,17 +1,41 @@
 package com.example.tripsmodule.Domains;
 
 import java.io.Serializable;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity(tableName = "trips")
 public class TripsDomain implements Serializable {
-    private String title ;
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
+    private int id;
+
+    @ColumnInfo(name = "title")
+    private String title;
+
+    @ColumnInfo(name = "location")
     private String location;
+
+    @ColumnInfo(name = "description")
     private String description;
+
+    @ColumnInfo(name = "bed")
     private int bed;
-    private boolean guide ;
-    private double score ;
+
+    @ColumnInfo(name = "guide")
+    private boolean guide;
+
+    @ColumnInfo(name = "score")
+    private double score;
+
+    @ColumnInfo(name = "pic")
     private String pic;
 
+    @ColumnInfo(name = "wifi")
     private boolean wifi;
+
+    @ColumnInfo(name = "price")
     private int price;
 
     public TripsDomain(String title, String location, String description, int bed, boolean guide, double score, String pic, boolean wifi, int price) {
@@ -24,6 +48,15 @@ public class TripsDomain implements Serializable {
         this.pic = pic;
         this.wifi = wifi;
         this.price = price;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
