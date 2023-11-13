@@ -18,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_post);
-        //initRecyclerView();
+        setContentView(R.layout.blog_list_item);
+        initRecyclerView();
     }
 
-    /*private void initRecyclerView() {
+    private void initRecyclerView() {
         ArrayList<BlogDomain> items = new ArrayList<>();
         items.add(new BlogDomain("Mar caible,avendia lago",
                 " It is well-known that setting up and managing finances a "
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewBlogs.setAdapter(adapterBlog);
 
     }
-*/
+
 
 
 

@@ -18,6 +18,7 @@ import com.example.myapplication.Domains.BlogDomain;
 import com.example.myapplication.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BlogAdapters extends RecyclerView.Adapter<BlogAdapters.ViewHolder>{
     ArrayList<BlogDomain> items;
@@ -65,4 +66,12 @@ public class BlogAdapters extends RecyclerView.Adapter<BlogAdapters.ViewHolder>{
             pic=itemView.findViewById(R.id.picImg);
         }
     }
+
+
+
+    public void setItems(ArrayList<BlogDomain> items) {
+        this.items = items;
+        notifyDataSetChanged();
+    }
+
 }

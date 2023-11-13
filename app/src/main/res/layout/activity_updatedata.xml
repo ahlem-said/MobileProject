@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="60dp"
+    tools:context=".Activities.updatedata">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edittitle"/>
+
+    <!-- Champ d'édition pour Description -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editdescription"/>
+
+    <!-- Champ d'édition pour Bed -->
+
+    <!-- Champ d'édition pour Guide -->
+
+    <!-- Champ d'édition pour Score -->
+
+    <!-- Champ d'édition pour Picture -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/editpic"/>
+
+    <!-- Champ d'édition pour WiFi -->
+
+
+    <!-- Champ d'édition pour Price -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="Update"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

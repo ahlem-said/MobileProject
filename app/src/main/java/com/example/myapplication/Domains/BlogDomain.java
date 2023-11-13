@@ -10,6 +10,16 @@ import java.io.Serializable;
 public class BlogDomain implements Serializable {
     @PrimaryKey(autoGenerate = true)
     public  int id ;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
     @ColumnInfo
     public String title ;
 

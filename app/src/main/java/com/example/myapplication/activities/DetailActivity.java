@@ -4,6 +4,7 @@ import com.example.myapplication.Domains.BlogDomain;
 import com.example.myapplication.R;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class DetailActivity extends AppCompatActivity {
     private TextView titleTxt,descriptionTxt;
     private BlogDomain item;
+
     private ImageView picImg,backBtn ;
 
     @Override

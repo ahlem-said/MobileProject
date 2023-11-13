@@ -7,6 +7,7 @@
     android:background="@color/white"
     tools:context=".activities.AddBlogActivity">
 
+
     <Button
         android:id="@+id/newPostBtn"
         android:layout_width="330dp"
@@ -23,59 +24,35 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newPostDescription"
-        app:layout_constraintVertical_bias="0.383" />
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/chooseImageButton"
-        style="@android:style/Widget.Button"
-        android:layout_width="336dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="21dp"
-        android:background="@drawable/intro_background"
-        android:text="Choose Image"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/titleview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newPostImage"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.104" />
 
     <EditText
         android:id="@+id/titleview"
         android:layout_width="350dp"
         android:layout_height="30dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="30dp"
-        android:autofillHints="name"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="59dp"
         android:background="@drawable/edit_text_border"
-        android:ems="10"
-        android:gravity="start"
-        android:hapticFeedbackEnabled="false"
+
         android:hint="Title"
-        android:hyphenationFrequency="normalFast"
-        android:rotationX="352"
         app:layout_constraintBottom_toTopOf="@+id/newPostDescription"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseImageButton"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/newPostImage"
+        app:layout_constraintVertical_bias="0.5" />
+
 
     <EditText
         android:id="@+id/newPostDescription"
         android:layout_width="350dp"
         android:layout_height="150dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         android:autofillHints="name"
@@ -95,27 +72,61 @@
         android:textIsSelectable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintHorizontal_bias="0.553"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newPostImage"
-        app:layout_constraintVertical_bias="0.357" />
+        app:layout_constraintVertical_bias="0.374" />
 
-    <ImageView
+    <EditText
         android:id="@+id/newPostImage"
-        android:layout_width="0dp"
-        android:layout_height="240dp"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="300dp"
-        android:background="@drawable/post_placeholder"
+        android:background="@drawable/edit_text_border"
+        android:hint="upload the image"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.105" />
+        app:layout_constraintVertical_bias="0.318" />
 
-    <include
-        android:id="@+id/progressBarNewPost"
-        layout="@layout/progress_bar_with_text"
-        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:autoSizeTextType="uniform"
+
+
+        android:text="@string/add_post"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColorHint="@color/BodyBackground"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="45dp" />
+
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="330dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/intro_background"
+        android:gravity="center"
+        android:text=" Consult list of blogs "
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newPostDescription"
+        app:layout_constraintVertical_bias="0.691" />
 </androidx.constraintlayout.widget.ConstraintLayout>
