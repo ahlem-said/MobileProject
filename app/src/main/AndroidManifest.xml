@@ -13,8 +13,14 @@
         android:theme="@style/Theme.TripsModule"
         tools:targetApi="31">
         <activity
-            android:name=".Activities.FormActivity"
+            android:name=".Activities.updatedata"
             android:exported="false" />
+        <activity
+            android:name=".Activities.fetchdata"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.FormActivity"
+            android:exported="true" />
         <activity
             android:name=".Activities.DetailActivity"
             android:exported="false" />

@@ -73,5 +73,7 @@ ArrayList<TripsDomain> items;
             scoreTxt=itemView.findViewById(R.id.scoreTxt);
             pic=itemView.findViewById(R.id.picImg);
         }
+
     }
+
 }

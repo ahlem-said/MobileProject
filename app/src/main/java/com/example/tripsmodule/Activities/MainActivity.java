@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.example.tripsmodule.Adapters.CategoryAdapter;
+
 import com.example.tripsmodule.Adapters.TripsAdapter;
 import com.example.tripsmodule.Domains.CategoryDomain;
 import com.example.tripsmodule.Domains.TripsDomain;
@@ -23,6 +27,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initRecyclerView();
+
+        ImageButton adminButton = findViewById(R.id.adminButton);
+        adminButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Redirigez vers la page du formulaire (FormActivity) en utilisant une intention (Intent).
+                Intent intent = new Intent(getApplicationContext(), FormActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void initRecyclerView() {
@@ -62,4 +77,6 @@ public class MainActivity extends AppCompatActivity {
         adapterCat=new CategoryAdapter(catsList);
         recyclerViewCategory.setAdapter(adapterCat);
     }
+
+
 }

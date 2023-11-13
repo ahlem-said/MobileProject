@@ -3,6 +3,7 @@ package com.example.tripsmodule.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +17,7 @@ import com.example.tripsmodule.database.AppDatabase;
 
 public class FormActivity extends AppCompatActivity {
     EditText t1,t2,t3,t4,t5,t6,t7,t8,t9;
-    Button b1;
+    Button b1,b2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,8 @@ public class FormActivity extends AppCompatActivity {
         t8=findViewById(R.id.t8);
         t9=findViewById(R.id.t9);
         b1=findViewById(R.id.b1);
+        b2=findViewById(R.id.b2);
+
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +49,7 @@ public class FormActivity extends AppCompatActivity {
         public void run() {
             super.run();
             AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                    AppDatabase.class, "room_db").build();
+                    AppDatabase.class, "room_db").allowMainThreadQueries().build();
             TripsDao tripsDao = db.tripsDao();
             tripsDao.insertrecord(new TripsDomain(
                     t1.getText().toString(),
@@ -74,6 +77,13 @@ public class FormActivity extends AppCompatActivity {
                     t8.setText("");
                     t9.setText("");
                     Toast.makeText(getApplicationContext(), "Inserted Successfully", Toast.LENGTH_LONG).show();
+                }
+            });
+
+            b2.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    startActivity(new Intent(getApplicationContext(), fetchdata.class));
                 }
             });
         }
