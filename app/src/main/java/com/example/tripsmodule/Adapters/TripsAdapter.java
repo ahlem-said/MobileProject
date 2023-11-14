@@ -18,6 +18,7 @@ import com.example.tripsmodule.Domains.TripsDomain;
 import com.example.tripsmodule.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TripsAdapter extends RecyclerView.Adapter<TripsAdapter.ViewHolder> {
 
@@ -27,6 +28,15 @@ ArrayList<TripsDomain> items;
     public TripsAdapter(ArrayList<TripsDomain> items) {
         this.items = items;
 
+    }
+    public void setSearchList(List<TripsDomain> dataSearchList){
+        this.items = (ArrayList<TripsDomain>) dataSearchList;
+        notifyDataSetChanged();
+    }
+
+    // Ajoutez cette méthode pour mettre à jour les éléments de l'adaptateur
+    public void setItems(ArrayList<TripsDomain> items) {
+        this.items = items;
     }
 
     @NonNull

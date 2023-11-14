@@ -6,8 +6,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.tripsmodule.Adapters.CategoryAdapter;
 
@@ -17,16 +21,45 @@ import com.example.tripsmodule.Domains.TripsDomain;
 import com.example.tripsmodule.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    EditText searchEditText;
+
+    TripsAdapter adapter;
 
     private RecyclerView.Adapter adapterTrips,adapterCat;
     private RecyclerView recyclerViewTrips,recyclerViewCategory;
+    private ArrayList<TripsDomain> allTrips; // Liste complète de voyages
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initRecyclerView();
+
+        // Récupérez l'EditText de recherche
+        searchEditText = findViewById(R.id.search);
+        // Récupérez la liste complète de voyages (elle doit être initialisée dans initRecyclerView)
+        allTrips = new ArrayList<>(); // Initialisez cette liste avec vos voyages
+
+        // Associez un TextWatcher pour surveiller les changements de texte
+        searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Non utilisé dans ce cas
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Filtrer les voyages à mesure que l'utilisateur tape
+                filterTrips(charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Non utilisé dans ce cas
+            }
+        });
 
         ImageButton adminButton = findViewById(R.id.adminButton);
         adminButton.setOnClickListener(new View.OnClickListener() {
@@ -39,8 +72,28 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+    private void filterTrips(String searchText) {
+        List<TripsDomain> dataSearchList = new ArrayList<>();
+
+        // Parcourez la liste complète de voyages
+        for (TripsDomain trip : allTrips) {
+            if (trip.getLocation().toLowerCase().contains(searchText.toLowerCase())) {
+                // Si l'emplacement du voyage contient le texte de recherche, ajoutez-le aux voyages filtrés
+                dataSearchList.add(trip);
+            }
+        }
+        if (dataSearchList.isEmpty()){
+            Toast.makeText(this, "Not Found", Toast.LENGTH_SHORT).show();
+        } else {
+            adapter.setSearchList(dataSearchList);
+        }
+
+
+
+    }
 
     private void initRecyclerView() {
+        allTrips = new ArrayList<>();
         ArrayList<TripsDomain> items = new ArrayList<>();
         items.add(new TripsDomain("Island Hopping and Hidden Paradise","Kandari, Indonesia","Une île privée au milieu d'un lac ," +
                 "de ski nautique dans le domaine de Hardwick Parks, " +
@@ -64,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewTrips.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         adapterTrips=new TripsAdapter(items);
         recyclerViewTrips.setAdapter(adapterTrips);
-
+        allTrips.addAll(items); // Ajoutez tous les voyages à 'allTrips'
         ArrayList<CategoryDomain> catsList =new ArrayList<>();
         catsList.add(new CategoryDomain("Beaches","cat1"));
         catsList.add(new CategoryDomain("Camps","cat2"));
